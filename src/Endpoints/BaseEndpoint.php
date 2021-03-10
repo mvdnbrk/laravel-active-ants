@@ -16,8 +16,8 @@ abstract class BaseEndpoint
 
     protected function getApiEndpoint(): string
     {
-        return Str::of(config('activeants.endpoint'))
-            ->when($this->useDemoEnvironment(), fn (Stringable $string) => $string->append('-demo'))
+        return Str::of('https://shopapi.activeants.nl')
+            ->when($this->useDemoEnvironment(), fn (Stringable $string) => $string->replace('.activeants.nl', 'test.activeants.nl'))
             ->append('/')
             ->append(Str::kebab(class_basename($this)))
             ->__toString();
