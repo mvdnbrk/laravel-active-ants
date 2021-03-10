@@ -17,7 +17,7 @@ abstract class BaseEndpoint
     protected function getBaseApiEndpoint(): string
     {
         return Str::of('https://shopapi.activeants.nl')
-            ->when($this->useDemoEnvironment(), fn (Stringable $string) => $string->replace('.activeants.nl', 'test.activeants.nl'))
+            ->when($this->useTestEnvironment(), fn (Stringable $string) => $string->replace('.activeants.nl', 'test.activeants.nl'))
             ->__toString();
     }
 
@@ -29,7 +29,7 @@ abstract class BaseEndpoint
             ->__toString();
     }
 
-    private function useDemoEnvironment(): bool
+    private function useTestEnvironment(): bool
     {
         return app()->isProduction() === false;
     }
