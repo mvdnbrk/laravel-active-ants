@@ -4,7 +4,7 @@ namespace Mvdnbrk\Laravel\ActiveAnts\Endpoints;
 
 use Illuminate\Support\Facades\Http;
 
-class Authentication
+class Authentication extends BaseEndpoint
 {
     public function token(): string
     {
@@ -34,7 +34,7 @@ class Authentication
 
     private function getApiEndpoint(): string
     {
-        return config('activeants.endpoint').'/token';
+        return $this->getBaseApiEndpoint().'/token';
     }
 
     private function accessTokenCacheKey(): string
