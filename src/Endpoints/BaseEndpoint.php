@@ -11,7 +11,7 @@ abstract class BaseEndpoint
 
     public function __construct()
     {
-        $this->token = (new Authentication)->token();
+        // $this->token = (new Authentication)->token();
     }
 
     protected function getBaseApiEndpoint(): string
