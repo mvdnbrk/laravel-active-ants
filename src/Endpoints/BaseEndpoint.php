@@ -14,11 +14,17 @@ abstract class BaseEndpoint
         $this->token = (new Authentication)->token();
     }
 
-    protected function getApiEndpoint(): string
+    protected function getBaseApiEndpoint(): string
     {
         return Str::of('https://shopapi.activeants.nl')
             ->when($this->useDemoEnvironment(), fn (Stringable $string) => $string->replace('.activeants.nl', 'test.activeants.nl'))
             ->append('/')
+            ->__toString();
+    }
+
+    protected function getApiEndpoint(): string
+    {
+        return Str::of($this->getBaseApiEndpoint())
             ->append(Str::kebab(class_basename($this)))
             ->__toString();
     }
