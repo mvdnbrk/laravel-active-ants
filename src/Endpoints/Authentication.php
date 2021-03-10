@@ -32,7 +32,7 @@ class Authentication extends BaseEndpoint
             ->json();
     }
 
-    private function getApiEndpoint(): string
+    protected function getApiEndpoint(): string
     {
         return $this->getBaseApiEndpoint().'/token';
     }
