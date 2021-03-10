@@ -1,0 +1,56 @@
+{
+    "name": "mvdnbrk/laravel-active-ants",
+    "description": "Laravel Active Ants",
+    "keywords": [
+        "laravel",
+        "active ants"
+    ],
+    "homepage": "https://github.com/mvdnbrk/laravel-active-ants",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mark van den Broek",
+            "email": "mvdnbrk@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.2",
+        "illuminate/cache": "^8.0",
+        "illuminate/contracts": "^8.0",
+        "illuminate/http": "^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.7",
+        "phpunit/phpunit": "^9.4",
+        "spatie/laravel-ray": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mvdnbrk\\Laravel\\ActiveAnts\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mvdnbrk\\Laravel\\ActiveAnts\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mvdnbrk\\Laravel\\ActiveAntsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
