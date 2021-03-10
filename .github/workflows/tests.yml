@@ -17,6 +17,10 @@ jobs:
 
     name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - ${{ matrix.stability }}
 
+    env:
+      ACTIVE_ANTS_USERNAME: ${{ secrets.ACTIVE_ANTS_USERNAME }}
+      ACTIVE_ANTS_PASSWORD: ${{ secrets.ACTIVE_ANTS_PASSWORD }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
