@@ -50,7 +50,7 @@ class AuthenticationTest extends TestCase
     public function it_throws_an_exception_when_providing_bad_credentials()
     {
         Http::fake([
-            'login.bol.com/*' => Http::response([
+            'shopapitest.activeants.nl/*' => Http::response([
                 'error' => 'unauthorized',
                 'error_description' => 'Bad credentials',
             ], Response::HTTP_UNAUTHORIZED),
