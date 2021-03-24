@@ -27,10 +27,10 @@ class Authentication extends BaseEndpoint
     private function requestToken(): array
     {
         return Http::asForm()->post($this->getApiEndpoint(), [
-                'grant_type' => 'password',
-                'username' => config('activeants.username'),
-                'password' => config('activeants.password'),
-            ])
+            'grant_type' => 'password',
+            'username' => config('activeants.username'),
+            'password' => config('activeants.password'),
+        ])
             ->throw()
             ->json();
     }
