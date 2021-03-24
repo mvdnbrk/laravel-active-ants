@@ -9,6 +9,7 @@ class Status extends BaseEndpoint
     public function get(): array
     {
         ray($this->getApiEndpoint());
+
         return Http::get($this->getApiEndpoint())
             ->throw()
             ->json();
