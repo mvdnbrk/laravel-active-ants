@@ -4,17 +4,20 @@ namespace Mvdnbrk\Laravel\ActiveAnts\Endpoints;
 
 use Illuminate\Support\Facades\Http;
 
-class Status extends BaseEndpoint
+class Settings extends BaseEndpoint
 {
     public function get(): array
     {
-        return Http::get($this->getApiEndpoint())
+        $token = (new Authentication())->token();
+
+        return Http::withToken($token)
+            ->get($this->getApiEndpoint())
             ->throw()
             ->json();
     }
 
     protected function getApiEndpoint(): string
     {
-        return $this->getBaseApiEndpoint().'/status/get';
+        return $this->getBaseApiEndpoint().'/settings/get';
     }
 }

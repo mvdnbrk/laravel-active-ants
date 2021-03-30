@@ -7,13 +7,6 @@ use Illuminate\Support\Stringable;
 
 abstract class BaseEndpoint
 {
-    protected string $token;
-
-    public function __construct()
-    {
-        // $this->token = (new Authentication)->token();
-    }
-
     protected function getBaseApiEndpoint(): string
     {
         return Str::of('https://shopapi.activeants.nl')
